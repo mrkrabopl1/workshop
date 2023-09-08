@@ -6,8 +6,13 @@ type windowType ={
 }
 const Window:React.FC<windowType>=(props)=>{
     const {component}={...props}
+    const windowStyle:any = {
+        position:"absolute",
+        margin:"auto",
+        width:"200px"
+    }
     return(
-            <div style={{width:"200px"}} >
+            <div  style={windowStyle} >
                 {component}
             </div>
     )

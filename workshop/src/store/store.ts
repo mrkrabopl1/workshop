@@ -3,11 +3,15 @@ import fieldReducer from "./reducers/fieldSlice"
 import appReducer from "./reducers/appSlice"
 import imageReducer from "./reducers/imageSlice"
 import iconReducer from "./reducers/iconSlice"
+import userReducer from "./reducers/userSlice"
+import radioReducer from "./reducers/radioSlice"
 const rootReducer = combineReducers({
     fieldReducer,
     appReducer,
     imageReducer,
-    iconReducer
+    iconReducer,
+    userReducer,
+    radioReducer
 })
 
 export const setupStore = () =>{

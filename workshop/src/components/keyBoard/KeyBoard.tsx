@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState ,useCallback} from 'react'
-import Button from '../Button'
+import Button from 'src/components/Button'
 import ASSETS from './assts'
 
 

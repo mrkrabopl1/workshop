@@ -1,28 +1,15 @@
 import React, { ReactElement, useRef, useState } from 'react'
 
 type propsRowType = {
-    tag:string,
     data:any,
-    callback:(...args:any)=>void
+    callback:(...args:any)=>void|null
 }
 
-const createRowContent:(tag:string,val:any)=>ReactElement = function(tag,val){
-
-    switch (tag){
-        case "input":
-            return <input type="text" value={val} />
-        default:
-            return <div>{val}</div>
-    } 
-
-}
 
 const Row: React.FC<propsRowType> = (props) => {
-    let {tag,data,callback} = {...props}
-  
-
+    let {data,callback} = {...props}
     return (
-       createRowContent(tag,data)
+       <div onClick={(e)=>{if(callback){callback(e)}}}>{data}</div>
     )
 }
 

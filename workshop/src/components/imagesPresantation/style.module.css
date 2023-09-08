@@ -1,0 +1,10 @@
+ .loop{
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 0;
+ }
+
+ .imgCompponentWrap{
+    position: relative;
+ }

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import ContextMenu from '../ContextMenu'
-import { useAppSelector,useAppDispatch } from '../../store/hooks/redux'
-import { fieldSlice } from '../../store/reducers/fieldSlice'
-import s from "./universalField.module.css"
+import ContextMenu from 'src/components//ContextMenu'
+import { useAppSelector,useAppDispatch } from 'src/store/hooks/redux'
+import { fieldSlice } from 'src/store/reducers/fieldSlice'
+import s from "src/components/universalField.module.css"
 interface IFieldProps {
     height:number
     width: number

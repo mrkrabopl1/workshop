@@ -1,0 +1,17 @@
+.merchField{
+    display: flex;
+    position: relative;
+    height:250px
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.merchWrap{
+    flex-shrink: 0;
+    width: 25%;
+    position: relative;
+  padding: 20px;
+}

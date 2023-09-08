@@ -1,12 +1,8 @@
 import React , { DragEvent,useEffect,useState }  from 'react'
-import {imgImport} from "../../providers/imgProvider"
+import {imgImport} from "src/providers/imgProvider"
 import s from "./dropZone.module.css"
-import dropFileType from '../../types/dropFile'
-
-
+import dropFileType from 'src/types/dropFile'
 const reader = new FileReader()
-
-
 
 
 type callbackType = (val:dropFileType)=>void

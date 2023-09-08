@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import ContextMenu from './ContextMenu'
-import { useAppSelector } from '../store/hooks/redux'
-import MainBlock from './combinatoricBlock/mainBlock'
+import ContextMenu from 'src/components/ContextMenu'
+import { useAppSelector } from 'src/store/hooks/redux'
+import MainBlock from 'src/components/combinatoricBlock/mainBlock'
 interface IFieldProps {
     height:number
     width: number

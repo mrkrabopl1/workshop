@@ -2,7 +2,7 @@ const WebpackBar = require('webpackbar')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const path = require('path')
-const CopyPlugin= require("copy-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -11,17 +11,17 @@ const { isDevelopment, isProduction } = require('../env')
 
 const getCssLoaders = () => {
     const cssLoaders = [
-            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: {
-                        localIdentName: "[local]--[hash:base64:5]"
-                    },
-                    sourceMap: isDevelopment,
-                }
+        isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+        {
+            loader: 'css-loader',
+            options: {
+                modules: {
+                    localIdentName: "[local]--[hash:base64:5]"
+                },
+                sourceMap: isDevelopment,
             }
-        ]
+        }
+    ]
 
 
     isProduction && cssLoaders.push({
@@ -53,6 +53,10 @@ module.exports = {
         buildDependencies: {
             config: [__filename],
         },
+    },
+    performance: {
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
     module: {
         rules: [
@@ -103,6 +107,10 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff|woff2?)$/,
                 type: 'asset/resource',
             },
+            // {
+            //     test: /\.svg$/,
+            //     use: ['@svgr/webpack'],      //Это если юзать svg как компонент но чет такое
+            // },
         ]
     },
     plugins: [
@@ -138,5 +146,8 @@ module.exports = {
     ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
+        alias: {
+            'src': path.resolve(__dirname, '../../src'),
+        }
     },
 }

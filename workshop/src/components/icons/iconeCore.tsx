@@ -1,23 +1,22 @@
 import React ,{useRef, useState} from "react"
-import { useAppSelector,useAppDispatch } from '../../store/hooks/redux'
+import { useAppSelector,useAppDispatch } from 'src/store/hooks/redux'
+import {userSlice } from 'src/store/reducers/userSlice'
 
-
-// const form={
-//     square:1,
-//     round:2
-// }
-
-const Icon:React.FC<any>=(backGround:string)=>{
-    const {src,position,size} = useAppSelector(state =>state.iconReducer)
+type iconType = {
+    iconSize:number
+}
+const Icon:React.FC<iconType>=(data)=>{
+    const {iconSize}={...data}
+    const {icon,image} = useAppSelector(state =>state.userReducer)
     const iconStyle = {
-        width:"50px",
-        height:"50px",
-        backgroundSize: `${size*25/150}px`,
-        backgroundImage:`url(${src})`,
-        backgroundPosition:`${position.x*25/150}px ${position.y*25/150}px`
+        width:iconSize+"px",
+        height:iconSize+"px",
+        backgroundSize: `${icon.imgWidth*iconSize/icon.size}px`,
+        backgroundImage:`url(${image.src})`,
+        backgroundPosition:`${icon.position.x*iconSize/2/icon.size}px ${icon.position.y*iconSize/2/icon.size}px`
     }
     return(
-            <div style = {iconStyle}></div>
+            <div  style = {iconStyle}></div>
     )
 }
 

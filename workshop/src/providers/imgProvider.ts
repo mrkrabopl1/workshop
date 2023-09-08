@@ -11,7 +11,7 @@ const imgImport = function (val:any,callback:(val:any)=>void){
 //   const persons = res.data;
 // })
 //,{headers:{"content-type":"multipart/form-data"}}
-axios.post(`http://127.0.0.1:8000/`,formData ,{headers:{"content-type":"multipart/form-data"}}).then((res)=>{
+axios.post(`http://127.0.0.1:8000/`,formData ,{headers:{"content-type":"multipart/form-data"}}).then((res:any)=>{
  callback(res.data) 
 }
 )

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useAppDispatch } from '../store/hooks/redux'
-import {fieldSlice} from '../store/reducers/fieldSlice'
+import { useAppDispatch } from 'src/store/hooks/redux'
+import {fieldSlice} from 'src/store/reducers/fieldSlice'
 
 import Row from './Row'
 interface IFieldProps {
